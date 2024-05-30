@@ -15,6 +15,8 @@
 		507F0FE12C089AD5005BFEAE /* Simple_Task_Planner__PP_IV_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F0FE02C089AD5005BFEAE /* Simple_Task_Planner__PP_IV_Tests.swift */; };
 		507F0FEB2C089AD5005BFEAE /* Simple_Task_Planner__PP_IV_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F0FEA2C089AD5005BFEAE /* Simple_Task_Planner__PP_IV_UITests.swift */; };
 		507F0FED2C089AD5005BFEAE /* Simple_Task_Planner__PP_IV_UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F0FEC2C089AD5005BFEAE /* Simple_Task_Planner__PP_IV_UITestsLaunchTests.swift */; };
+		507F0FFA2C089BA8005BFEAE /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F0FF92C089BA8005BFEAE /* Task.swift */; };
+		507F0FFC2C08A0F6005BFEAE /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F0FFB2C08A0F6005BFEAE /* ConfigurationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		507F0FE62C089AD5005BFEAE /* Simple Task Planner (PP IV)UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple Task Planner (PP IV)UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		507F0FEA2C089AD5005BFEAE /* Simple_Task_Planner__PP_IV_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simple_Task_Planner__PP_IV_UITests.swift; sourceTree = "<group>"; };
 		507F0FEC2C089AD5005BFEAE /* Simple_Task_Planner__PP_IV_UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simple_Task_Planner__PP_IV_UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		507F0FF92C089BA8005BFEAE /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		507F0FFB2C08A0F6005BFEAE /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				507F0FD12C089AD4005BFEAE /* Item.swift */,
 				507F0FD32C089AD5005BFEAE /* Assets.xcassets */,
 				507F0FD52C089AD5005BFEAE /* Preview Content */,
+				507F0FF92C089BA8005BFEAE /* Task.swift */,
+				507F0FFB2C08A0F6005BFEAE /* ConfigurationView.swift */,
 			);
 			path = "Simple Task Planner (PP IV)";
 			sourceTree = "<group>";
@@ -260,6 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				507F0FFA2C089BA8005BFEAE /* Task.swift in Sources */,
+				507F0FFC2C08A0F6005BFEAE /* ConfigurationView.swift in Sources */,
 				507F0FD02C089AD4005BFEAE /* ContentView.swift in Sources */,
 				507F0FD22C089AD4005BFEAE /* Item.swift in Sources */,
 				507F0FCE2C089AD4005BFEAE /* Simple_Task_Planner__PP_IV_App.swift in Sources */,

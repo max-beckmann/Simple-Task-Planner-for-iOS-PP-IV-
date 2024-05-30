@@ -10,46 +10,60 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var tasks: [Task]
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+        VStack {
+            NavigationStack {
+                ZStack {
+                    if(tasks.isEmpty) {
+                        Text("no tasks found")
+                            .foregroundColor(.gray)
+                    } else {
+                        List {
+                            ForEach(tasks) { task in
+                                NavigationLink {
+                                    Text("Task \(task.identifier)")
+                                } label: {
+                                    Text("\(task.title)")
+                                }
+                            }
+                            .onDelete(perform: deleteTasks)
+                        }
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                EditButton()
+                            }
+                        }
                     }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            NavigationLink(destination: ConfigurationView()) {
+                                ZStack {
+                                    Circle()
+                                        .frame(width: 36, height: 36)
+                                        .foregroundColor(.brown)
+                                    Image(systemName: "plus")
+                                        .foregroundColor(.white)
+                                        .imageScale(.medium)
+                                }
+                            }
+                            .padding()
+                        }
                     }
+                    .zIndex(2)
                 }
             }
-        } detail: {
-            Text("Select an item")
         }
     }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
+    private func deleteTasks(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(tasks[index])
             }
         }
     }
@@ -57,5 +71,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Task.self, inMemory: true)
 }
