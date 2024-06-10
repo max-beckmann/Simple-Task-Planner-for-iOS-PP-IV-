@@ -11,13 +11,8 @@ import SwiftData
 @main
 struct Simple_Task_Planner__PP_IV_App: App {
     var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            return try ModelContainer(for: Task.self)
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
@@ -26,7 +21,7 @@ struct Simple_Task_Planner__PP_IV_App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(sharedModelContainer)
         }
-        .modelContainer(sharedModelContainer)
     }
 }

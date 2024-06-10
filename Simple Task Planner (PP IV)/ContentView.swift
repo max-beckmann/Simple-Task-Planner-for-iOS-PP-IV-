@@ -36,25 +36,16 @@ struct ContentView: View {
                             }
                         }
                     }
-                    
-                    VStack {
-                        Spacer()
+                }
+                .navigationTitle("All tasks")
+                .toolbar {
+                    ToolbarItem(placement: .bottomBar) {
                         HStack {
                             Spacer()
-                            NavigationLink(destination: ConfigurationView()) {
-                                ZStack {
-                                    Circle()
-                                        .frame(width: 36, height: 36)
-                                        .foregroundColor(.brown)
-                                    Image(systemName: "plus")
-                                        .foregroundColor(.white)
-                                        .imageScale(.medium)
-                                }
-                            }
-                            .padding()
+                            AddTaskButton(size: 48)
+                                .zIndex(2)
                         }
                     }
-                    .zIndex(2)
                 }
             }
         }

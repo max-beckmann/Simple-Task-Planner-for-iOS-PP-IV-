@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50664D232C16E43200770862 /* AddTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50664D222C16E43200770862 /* AddTaskButton.swift */; };
 		507F0FCE2C089AD4005BFEAE /* Simple_Task_Planner__PP_IV_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F0FCD2C089AD4005BFEAE /* Simple_Task_Planner__PP_IV_App.swift */; };
 		507F0FD02C089AD4005BFEAE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F0FCF2C089AD4005BFEAE /* ContentView.swift */; };
 		507F0FD22C089AD4005BFEAE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F0FD12C089AD4005BFEAE /* Item.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		50664D222C16E43200770862 /* AddTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskButton.swift; sourceTree = "<group>"; };
 		507F0FCA2C089AD4005BFEAE /* Simple Task Planner (PP IV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Task Planner (PP IV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		507F0FCD2C089AD4005BFEAE /* Simple_Task_Planner__PP_IV_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simple_Task_Planner__PP_IV_App.swift; sourceTree = "<group>"; };
 		507F0FCF2C089AD4005BFEAE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50664D212C16E41000770862 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				50664D222C16E43200770862 /* AddTaskButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		507F0FC12C089AD3005BFEAE = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +110,7 @@
 		507F0FCC2C089AD4005BFEAE /* Simple Task Planner (PP IV) */ = {
 			isa = PBXGroup;
 			children = (
+				50664D212C16E41000770862 /* Components */,
 				507F0FCD2C089AD4005BFEAE /* Simple_Task_Planner__PP_IV_App.swift */,
 				507F0FCF2C089AD4005BFEAE /* ContentView.swift */,
 				507F0FD12C089AD4005BFEAE /* Item.swift */,
@@ -268,6 +279,7 @@
 			files = (
 				507F0FFA2C089BA8005BFEAE /* Task.swift in Sources */,
 				507F0FFC2C08A0F6005BFEAE /* ConfigurationView.swift in Sources */,
+				50664D232C16E43200770862 /* AddTaskButton.swift in Sources */,
 				507F0FD02C089AD4005BFEAE /* ContentView.swift in Sources */,
 				507F0FD22C089AD4005BFEAE /* Item.swift in Sources */,
 				507F0FCE2C089AD4005BFEAE /* Simple_Task_Planner__PP_IV_App.swift in Sources */,
