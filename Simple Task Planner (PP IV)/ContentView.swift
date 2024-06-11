@@ -13,38 +13,32 @@ struct ContentView: View {
     @Query private var tasks: [Task]
 
     var body: some View {
-        VStack {
-            NavigationStack {
-                ZStack {
-                    if(tasks.isEmpty) {
-                        Text("no tasks found")
-                            .foregroundColor(.gray)
-                    } else {
-                        List {
-                            ForEach(tasks) { task in
-                                NavigationLink {
-                                    Text("Task \(task.identifier)")
-                                } label: {
-                                    Text("\(task.title)")
-                                }
-                            }
-                            .onDelete(perform: deleteTasks)
+        NavigationStack {
+            HStack {
+                if(tasks.isEmpty) {
+                    Text("no tasks found")
+                        .foregroundColor(.gray)
+                } else {
+                    List {
+                        ForEach(tasks) { task in
+                            TaskListItem(task: task)
                         }
-                        .toolbar {
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                EditButton()
-                            }
+                        .onDelete(perform: deleteTasks)
+                    }
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            EditButton()
                         }
                     }
                 }
-                .navigationTitle("All tasks")
-                .toolbar {
-                    ToolbarItem(placement: .bottomBar) {
-                        HStack {
-                            Spacer()
-                            AddTaskButton(size: 48)
-                                .zIndex(2)
-                        }
+            }
+            .navigationTitle("All tasks")
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    HStack {
+                        Spacer()
+                        AddTaskButton(size: 48)
+                            .zIndex(2)
                     }
                 }
             }

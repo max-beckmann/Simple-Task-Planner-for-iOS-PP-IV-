@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import SwiftUI
 
 enum Priority: String, CaseIterable, Codable {
     case none
@@ -17,9 +18,22 @@ enum Priority: String, CaseIterable, Codable {
 
 enum Status: String, CaseIterable, Codable {
     case pending
-    case inProgress
+    case ongoing
     case paused
     case done
+    
+    func color() -> Color {
+        switch self {
+        case .pending:
+            return Color.gray
+        case .ongoing:
+            return Color.blue
+        case .paused:
+            return Color.orange
+        case .done:
+            return Color.green
+        }
+    }
 }
 
 @Model
