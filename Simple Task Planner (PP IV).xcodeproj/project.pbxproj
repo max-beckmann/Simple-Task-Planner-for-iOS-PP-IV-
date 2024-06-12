@@ -20,6 +20,7 @@
 		5085B1662C1835300085CB37 /* TaskListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085B1652C1835300085CB37 /* TaskListItem.swift */; };
 		5085B1682C18376F0085CB37 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085B1672C18376F0085CB37 /* TaskView.swift */; };
 		5085B16A2C18405C0085CB37 /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085B1692C18405C0085CB37 /* StatusBadge.swift */; };
+		50E387AD2C199A0D00E14A06 /* ConfigurationElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E387AC2C199A0D00E14A06 /* ConfigurationElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		5085B1652C1835300085CB37 /* TaskListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListItem.swift; sourceTree = "<group>"; };
 		5085B1672C18376F0085CB37 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		5085B1692C18405C0085CB37 /* StatusBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBadge.swift; sourceTree = "<group>"; };
+		50E387AC2C199A0D00E14A06 /* ConfigurationElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				50664D222C16E43200770862 /* AddTaskButton.swift */,
 				5085B1652C1835300085CB37 /* TaskListItem.swift */,
 				5085B1692C18405C0085CB37 /* StatusBadge.swift */,
+				50E387AC2C199A0D00E14A06 /* ConfigurationElement.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50E387AD2C199A0D00E14A06 /* ConfigurationElement.swift in Sources */,
 				507F0FFA2C089BA8005BFEAE /* Task.swift in Sources */,
 				5085B1682C18376F0085CB37 /* TaskView.swift in Sources */,
 				507F0FFC2C08A0F6005BFEAE /* ConfigurationView.swift in Sources */,

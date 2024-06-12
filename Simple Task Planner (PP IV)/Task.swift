@@ -36,6 +36,14 @@ enum Status: String, CaseIterable, Codable {
     }
 }
 
+enum TShirtSize: String, CaseIterable, Codable {
+    case XS
+    case S
+    case M
+    case L
+    case XL
+}
+
 @Model
 class Task {
     @Attribute(.unique) var identifier: String
@@ -43,10 +51,10 @@ class Task {
     var desc: String
     var priority: Priority
     var dueOn: Date
-    var expenditure: Int
+    var expenditure: TShirtSize
     var status: Status = Status.pending
     
-    init(identifier: String, title: String, desc: String, priority: Priority, dueOn: Date, expenditure: Int) {
+    init(identifier: String, title: String, desc: String, priority: Priority, dueOn: Date, expenditure: TShirtSize) {
         self.identifier = identifier
         self.title = title
         self.desc = desc

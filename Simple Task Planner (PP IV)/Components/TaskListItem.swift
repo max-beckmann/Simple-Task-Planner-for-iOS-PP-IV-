@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TaskListItem: View {
-    var task: Task = Task(identifier: "", title: "Test", desc: "", priority: .high, dueOn: Date(), expenditure: 0)
+    var task: Task = Task(identifier: "", title: "Test", desc: "", priority: .high, dueOn: Date(), expenditure: .M)
     
     var body: some View {
         NavigationLink(destination: TaskView(task: task)) {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TaskView: View {
-    @State var task: Task = Task(identifier: "", title: "Test", desc: "", priority: .high, dueOn: Date(), expenditure: 0)
+    @State var task: Task = Task(identifier: "", title: "Test", desc: "", priority: .high, dueOn: Date(), expenditure: .M)
     
     var body: some View {
         VStack(spacing: 16) {

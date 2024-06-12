@@ -10,44 +10,78 @@ import SwiftUI
 struct ConfigurationView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @State private var showDatePicker = false
     @State private var title: String = ""
     @State private var desc: String = ""
     @State private var priority: Priority = .none
     @State private var selectedDate: Date = Date()
-    @State private var expenditure: String = ""
+    @State private var expenditure: TShirtSize = .M
     
     var body: some View {
         VStack(spacing: 16) {
-            TextField("Enter a title", text: $title)
-                .textFieldStyle(.roundedBorder)
-            TextField("Enter a description", text: $desc, axis: .vertical)
-                .textFieldStyle(.roundedBorder)
-                .lineLimit(3...5)
-            Picker("Select the priority", selection: $priority) {
-                ForEach(Priority.allCases, id: \.self) { priority in
-                    Text(priority.rawValue).tag(priority)
+            VStack(spacing: 0) {
+                TextField("Enter a title", text: $title)
+                    .padding(8)
+                    .background(.white)
+                    .cornerRadius(8, corners: [.topLeft, .topRight])
+                Divider()
+                    .background(Color(UIColor.systemGray6))
+                TextField("Enter a description", text: $desc, axis: .vertical)
+                    .padding(8)
+                    .background(.white)
+                    .cornerRadius(8, corners: [.bottomLeft, .bottomRight])
+                    .lineLimit(3...5)
+            }
+            ConfigurationElement(text: "Due on") {
+                if showDatePicker {
+                    DatePicker("", selection: $selectedDate, displayedComponents: .date)
+                } else {
+                    Button(action: {
+                        withAnimation {
+                            showDatePicker.toggle()
+                        }
+                    }) {
+                        Image(systemName: "plus")
+                            .font(.headline)
+                            .frame(alignment: .trailing)
+                    }
                 }
             }
-            .pickerStyle(.segmented)
-            DatePicker("Select the due date", selection: $selectedDate, displayedComponents: .date)
-            TextField("Enter the expected expenditure (in hours)", text: $expenditure)
-                .keyboardType(.numberPad)
-                .textFieldStyle(.roundedBorder)
+            ConfigurationElement(text: "Priority") {
+                Picker("", selection: $priority) {
+                    ForEach(Priority.allCases, id: \.self) { priority in
+                        Text(priority.rawValue).tag(priority)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .frame(maxWidth: 220)
+            }
+            ConfigurationElement(text: "Expenditure") {
+                Picker("", selection: $expenditure) {
+                    ForEach(TShirtSize.allCases, id: \.self) { size in
+                        Text(size.rawValue).tag(size)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .frame(maxWidth: 220)
+            }
             Spacer()
         }
         .padding(.horizontal)
         .padding(.top, 16)
         .navigationTitle("New task")
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem {
                 Button(action: {
                     addTask()
                     dismiss()
                 }) {
-                    Text("add")
+                    Text("Add")
                 }
             }
         }
+        .background(Color(UIColor.systemGray6))
     }
     
     private func addTask() {
@@ -58,10 +92,26 @@ struct ConfigurationView: View {
                 desc: desc,
                 priority: priority,
                 dueOn: selectedDate,
-                expenditure: Int(expenditure) ?? 0
+                expenditure: expenditure
             )
             modelContext.insert(newTask)
         }
+    }
+}
+
+extension View {
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape(RoundedCorner(radius: radius, corners: corners) )
+    }
+}
+
+struct RoundedCorner: Shape {
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
     }
 }
 
