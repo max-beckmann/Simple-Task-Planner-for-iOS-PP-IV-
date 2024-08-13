@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		503C5C0A2C6B70E80041E984 /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C5C092C6B70E80041E984 /* Check.swift */; };
 		50664D232C16E43200770862 /* AddTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50664D222C16E43200770862 /* AddTaskButton.swift */; };
 		507F0FCE2C089AD4005BFEAE /* Simple_Task_Planner__PP_IV_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F0FCD2C089AD4005BFEAE /* Simple_Task_Planner__PP_IV_App.swift */; };
 		507F0FD02C089AD4005BFEAE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F0FCF2C089AD4005BFEAE /* ContentView.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		503C5C092C6B70E80041E984 /* Check.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check.swift; sourceTree = "<group>"; };
 		50664D222C16E43200770862 /* AddTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskButton.swift; sourceTree = "<group>"; };
 		507F0FCA2C089AD4005BFEAE /* Simple Task Planner (PP IV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Task Planner (PP IV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		507F0FCD2C089AD4005BFEAE /* Simple_Task_Planner__PP_IV_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simple_Task_Planner__PP_IV_App.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				5085B1652C1835300085CB37 /* TaskListItem.swift */,
 				5085B1692C18405C0085CB37 /* StatusBadge.swift */,
 				50E387AC2C199A0D00E14A06 /* ConfigurationElement.swift */,
+				503C5C092C6B70E80041E984 /* Check.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			files = (
 				50E387AD2C199A0D00E14A06 /* ConfigurationElement.swift in Sources */,
 				507F0FFA2C089BA8005BFEAE /* Task.swift in Sources */,
+				503C5C0A2C6B70E80041E984 /* Check.swift in Sources */,
 				5085B1682C18376F0085CB37 /* TaskView.swift in Sources */,
 				507F0FFC2C08A0F6005BFEAE /* ConfigurationView.swift in Sources */,
 				5085B16A2C18405C0085CB37 /* StatusBadge.swift in Sources */,

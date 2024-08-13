@@ -21,7 +21,12 @@ struct ContentView: View {
                 } else {
                     List {
                         ForEach(tasks) { task in
-                            TaskListItem(task: task)
+                            TaskListItem(task: Binding(
+                                get: { task },
+                                set: { newValue in
+                                    task.status = newValue.status
+                                }
+                            ))
                         }
                         .onDelete(perform: deleteTasks)
                     }

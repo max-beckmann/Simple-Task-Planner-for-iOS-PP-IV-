@@ -8,19 +8,16 @@
 import SwiftUI
 
 struct TaskListItem: View {
-    var task: Task = Task(identifier: "", title: "Test", desc: "", priority: .high, dueOn: Date(), expenditure: .M)
+    @Binding var task: Task
     
     var body: some View {
         NavigationLink(destination: TaskView(task: task)) {
-            Text("\(task.title)")
             HStack {
-                StatusBadge(status: task.status)
+                Text("\(task.title)")
+                Spacer()
+                Check(status: $task.status)
             }
             .padding(.leading, 12)
         }
     }
-}
-
-#Preview {
-    TaskListItem()
 }
